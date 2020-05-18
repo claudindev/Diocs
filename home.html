@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diocs</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    
+    <div class="grid-wrapper">
+        <div class="content">
+            <div class="logo"></div>
+            <div class="busca-wrapper">
+                <label for="start">De onde...</label>
+                <input type="text" name="start" id="start">
+
+                <label for="end">Para onde...</label>
+                <input type="text" name="end" id="end">
+        
+                <button type="button" class="button-primary" id="calcRoute" onclick="calcRoute('WALKING')">Buscar</button>                
+            </div>
+            
+            <div class="resultados resultados-hidden">
+
+                <div class="res-wrapper">
+                    <div id="resultado-andando" class="resultado" onclick="calcRoute('WALKING')">
+                        <svg class="res-icon res-icon-selected" id="andando-icon" width="32" height="49" viewBox="0 0 32 49" fill="#c9c9c9" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.6087 9.66667C21.2781 9.66667 23.4421 7.50271 23.4421 4.83333C23.4421 2.16396 21.2781 0 18.6087 0C15.9393 0 13.7754 2.16396 13.7754 4.83333C13.7754 7.50271 15.9393 9.66667 18.6087 9.66667ZM12.4872 16.2187L9.21662 17.1531C7.78037 17.5635 6.75895 18.3688 5.90728 19.6463L3.67186 22.9994L2.84868 24.2342L2.60985 24.5924L2.54601 24.6882L2.52954 24.7129L2.52535 24.7192L2.5243 24.7208L2.52403 24.7212L2.52397 24.7213L1.69189 24.1666L0.859866 23.6119L0.859933 23.6118L0.860197 23.6114L0.861251 23.6098L0.865434 23.6035L0.88191 23.5788L0.945749 23.483L1.18458 23.1248L2.00776 21.89L4.24318 18.5369C5.32484 16.9144 6.72009 15.7864 8.66717 15.2301L13.7422 13.7801L13.7582 13.7755L13.7744 13.7715C17.1129 12.9368 20.537 14.5878 21.7083 17.7423L23.1415 20.8475L23.157 20.881L23.1699 20.9155C23.7693 22.514 24.957 23.5421 26.6761 24.1906L31.0081 25.6346L30.3757 27.5319L26.0257 26.0819L26.0081 26.0761L25.9908 26.0696C23.8636 25.2719 22.1638 23.8952 21.3107 21.6533L19.8756 18.544L19.8581 18.506L19.8438 18.4667C19.6704 17.99 19.4182 17.5584 19.1037 17.1823L19.575 18.1249L17.4 28.0332L17.5665 28.8159L23.2001 36.9749C24.1668 39.8748 26.5833 45.9161 27.55 48.333L27.5501 48.3332L27.5501 48.3333H22.4751L18.8501 38.4249L18.5027 37.9617L11.6 30.4499C10.6333 29.2416 9.9083 27.5499 10.3916 25.8582L12.4872 16.2187ZM11.1167 42.05L5.55833 48.3333H0L7.25 39.15L9.425 32.1416L13.05 36.25L11.1167 42.05Z"/>
+                            </svg>                        
+                        <div id="res-andando-texto" class="res-texto"></div>
+                    </div>
+
+                    <div id="resultado-bike" class="resultado" onclick="calcRoute('BICYCLING')">
+                        <svg class="res-icon" id="bike-icon" width="49" height="47" viewBox="0 0 49 47" fill="#c9c9c9" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M33.9746 9.70707C36.6552 9.70707 38.8282 7.53407 38.8282 4.85353C38.8282 2.173 36.6552 0 33.9746 0C31.2941 0 29.1211 2.173 29.1211 4.85353C29.1211 7.53407 31.2941 9.70707 33.9746 9.70707ZM36.3266 17.0406C35.6126 17.0406 35.1365 16.5538 34.8985 16.0669C28.9482 8.52032 27.0441 7.05969 25.6161 7.05969H24.902C22.9979 7.05969 21.5698 8.52032 14.6675 15.58C12.0494 18.2578 12.2874 21.6659 14.9055 23.37L19.7546 26.2874L21.682 28.1413L21.7006 28.1595V39.7108H26.9383V28.1234C26.9383 27.4516 26.8188 26.7792 26.5161 26.1242C26.2186 25.4802 25.8021 24.9795 25.3856 24.5789L22.493 21.7966L28.2342 16.5538L31.8044 20.4488C32.5184 21.4225 33.7085 21.9094 34.8985 21.9094H43.705V17.0406H36.3266ZM39.2001 30.8699C42.3851 30.8699 45.0801 33.5649 45.0801 36.7499C45.0801 39.9349 42.3851 42.6299 39.2001 42.6299C36.0151 42.6299 33.3201 39.9349 33.3201 36.7499C33.3201 33.5649 36.0151 30.8699 39.2001 30.8699ZM39.2001 26.95C33.8101 26.95 29.4001 31.3599 29.4001 36.7499C29.4001 42.1399 33.8101 46.5499 39.2001 46.5499C44.5901 46.5499 49.0001 42.1399 49.0001 36.7499C49.0001 31.3599 44.5901 26.95 39.2001 26.95ZM15.6799 36.7499C15.6799 33.5649 12.985 30.8699 9.79997 30.8699C6.61498 30.8699 3.91999 33.5649 3.91999 36.7499C3.91999 39.9349 6.61498 42.6299 9.79997 42.6299C12.985 42.6299 15.6799 39.9349 15.6799 36.7499ZM0 36.7499C0 31.3599 4.40998 26.95 9.79997 26.95C15.1899 26.95 19.5999 31.3599 19.5999 36.7499C19.5999 42.1399 15.1899 46.5499 9.79997 46.5499C4.40998 46.5499 0 42.1399 0 36.7499Z"/>
+                        </svg>                        
+                        <div id="res-bike-texto" class="res-texto res-hidden"></div>
+                    </div> 
+                </div>
+                <h4 class="economia">Economia de <span class="economia-money">R$40</span></h4>
+                <button type="button" class="button-secondary" id="" onclick="">Acessar Rota</button>
+                <button type="button" class="button-primary" id="" onclick="resetarBusca()">Realizar Nova Busca</button>           
+            </div>
+            
+        </div>
+        
+        <div class="map" id="map">
+    
+        </div>
+    </div>
+
+    <script src="js/initMap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL4vO5O4u-cPb90s1vpUsHcmNg3pzjhrk&callback=initMap"
+    async defer></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
