@@ -48,6 +48,12 @@ function initMap() {
             let horas = duracao.slice(0, horasPos-1);
             let minutos;
 
+            let distancia = parseFloat(result.routes[0].legs[0].distance.text.replace(' km', ''));
+            
+            document.getElementsByClassName('economia-gco2')[0].innerHTML = parseInt(distancia*200)+"gCO²";
+
+            document.getElementsByClassName('economia-money')[0].innerHTML = 'R$'+ parseInt(parseInt(distancia)*5);
+
             if (horasPos != -1 && horasPos != 0 && horasPos != NaN) {
                 minutos = duracao.slice(minPos-3, minPos-1);
                 duracao = horas + "h e " + minutos + "min";
