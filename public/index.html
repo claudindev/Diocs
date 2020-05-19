@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diocs</title>
 
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.14.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.14.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.14.4/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.14.4/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.14.4/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
 </head>
 <body>
     
@@ -57,9 +68,9 @@
         </div>
     </div>
 
-    <script src="js/initMap.js"></script>
+    <script src="/js/initMap.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL4vO5O4u-cPb90s1vpUsHcmNg3pzjhrk&callback=initMap"
     async defer></script>
-    <script src="js/home.js"></script>
+    <script src="/js/home.js"></script>
 </body>
 </html>
