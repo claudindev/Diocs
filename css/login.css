@@ -14,8 +14,8 @@ h4{
 
 .social-login {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 270px;
+    grid-template-columns: 1fr 1fr;
+    width: 156px;
     margin: auto;
     padding-bottom: 60px;
     box-sizing: border-box;
