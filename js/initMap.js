@@ -2,6 +2,8 @@
 
 let calcRoute;
 
+let testInputs;
+
 function initMap() {
     var directionsService = new google.maps.DirectionsService();
     var directionsRenderer = new google.maps.DirectionsRenderer();
@@ -17,19 +19,15 @@ function initMap() {
         units: 'metric'
     }
 
+    localStorage.clear();
+
     calcRoute = function(selectedMode) {
         document.getElementsByClassName('busca-wrapper')[0].classList.add('busca-hidden');
         document.getElementsByClassName('resultados')[0].classList.remove('resultados-hidden');
 
         var start = document.getElementById('start').value;
         var end = document.getElementById('end').value;
-        if (start == '' || end == '') {
-            alert('Por favor, preencha os dois campos.');
-            return;
-        } else if (start == end) {
-            alert('Por favor, busque por endereços diferentes.');
-            return;
-        }
+
         var request = {
             origin: start,
             destination: end,
@@ -50,9 +48,22 @@ function initMap() {
 
             let distancia = parseFloat(result.routes[0].legs[0].distance.text.replace(' km', ''));
             
-            document.getElementsByClassName('economia-gco2')[0].innerHTML = parseInt(distancia*200)+"gCO²";
+            let economia;
 
-            document.getElementsByClassName('economia-money')[0].innerHTML = 'R$'+ parseInt(parseInt(distancia)*5);
+            if (localStorage.getItem('economia')) {
+                economia = JSON.parse(localStorage.getItem('economia'));
+            } else {
+                economia = {
+                    gco2: parseInt(distancia*200), 
+                    money: parseInt(parseInt(distancia)*5)
+                };
+            }
+
+            localStorage.setItem('economia', JSON.stringify(economia));
+
+            document.getElementsByClassName('economia-gco2')[0].innerHTML = economia.gco2 +"gCO²";
+
+            document.getElementsByClassName('economia-money')[0].innerHTML = 'R$'+ economia.money;
 
             if (horasPos != -1 && horasPos != 0 && horasPos != NaN) {
                 minutos = duracao.slice(minPos-3, minPos-1);
@@ -82,6 +93,20 @@ function initMap() {
         });
     };
     
+    testInputs = function() {
+        var test1 = document.getElementById('start').value;
+        var test2 = document.getElementById('end').value;
+        if (test1 == '' || test2 == '') {
+            alert('Por favor, preencha os dois campos.');
+            return false;
+        } else if (test1 == test2) {
+            alert('Por favor, busque por endereços diferentes.');
+            return false;
+        } else {
+            calcRoute('WALKING');
+        }
+    }
+
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
     directionsRenderer.setMap(map);

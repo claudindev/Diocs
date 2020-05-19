@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diocs</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    
+</head>
+<body>
+    
+    <div class="grid-wrapper">
+        <div class="content">
+            <div class="logo"></div>
+            <h2>Para uma vida agitada prejudicando menos o meio ambiente.</h2>
+            <h4>Te ajudamos a encontrar o trajeto mais rápido sem poluir mais o ambiente.
+                Faça seu login ou cadastre-se para 
+                saber mais!</h4>
+            <div class="login">
+                <label for="start">Email</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="end">Senha</label>
+                <input type="password" name="senha" id="senha" required>
+                
+                <a href="">Esqueceu sua senha?</a>
+
+                <div class="buttons-wrapper">
+                    <button type="button" class="button-color" onclick="">Entrar</button>
+                    <button type="button" class="button-primary" onclick="">Criar Conta</button>
+                </div>
+                
+                <h3>Ou continuar com:</h3>
+                <div class="social-login">
+                    <button class="social-btn google-btn"></button>
+
+                    <button class="social-btn twitter-btn"></button>
+
+                    <button class="social-btn facebook-btn"></button>
+
+                    <button class="social-btn email-btn"></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map" id="map">
+    
+        </div>
+    </div>
+
+    <script src="js/initMap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL4vO5O4u-cPb90s1vpUsHcmNg3pzjhrk&callback=initMap"
+    async defer></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

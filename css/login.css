@@ -1,0 +1,48 @@
+h2 {
+    margin: 30px 0 10px 0;
+}
+
+h4{
+    margin-bottom: 40px;
+}
+
+.buttons-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}
+
+.social-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 270px;
+    margin: auto;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+
+.social-btn {
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    background-position: center;
+    background-size: contain 60%;
+    background-repeat: no-repeat;
+}
+
+.google-btn {
+    background-image: url(../img/Google.svg);
+}
+
+.twitter-btn {
+    background-image: url(../img/Twitter.svg);
+}
+
+.facebook-btn {
+    background-image: url(../img/Facebook.svg);
+}
+
+.email-btn {
+    display: none;
+    background-image: url(../img/Email.svg);
+}

@@ -16,16 +16,21 @@ html, body {
 
 .content {
     padding: 0 60px;
+    min-height: 100vh;
 }
 
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 #map {
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
 }
 
 h4 {
-    text-align: center;
+    text-align: left;
+    font-size: 20px;
+    font-weight: normal;
+    color: #444444;
 }
 
 label {
@@ -50,6 +55,7 @@ input {
     outline: none;
     font-size: 16px;
     color: #5F5F5F;
+    transition: 100ms ease-in-out;
 }
 
 input:focus {
@@ -74,6 +80,7 @@ button {
     padding-top: 4px;
     cursor: pointer;
     transition: 150ms ease-in-out;
+    letter-spacing: 0.040em;
 }
 
 button:hover {
@@ -98,6 +105,15 @@ button:active {
     color: #EF685D;
 }
 
+.button-color {
+    background-color: #4B6971;
+    color: #fbfbfb;
+}
+
+.button-color:active {
+    filter: brightness(0.8);
+}
+
 h2{
     margin: 0;
     margin-bottom: 37px;
@@ -105,4 +121,23 @@ h2{
     font-size: 22px;
     font-weight: bold;
     color: #4B6971;
+}
+
+a {
+    display: block;
+    color: #818181;
+    width: 100%;
+    text-align: right;
+    margin: -5px 0 -15px 0;
+    transition: 50ms;
+}
+ 
+a:hover {
+    color: #4B6971;
+}
+
+h3 {
+    margin-top: 60px;
+    font-size: 18px;
+    text-align: center;
 }
