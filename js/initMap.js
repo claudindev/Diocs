@@ -45,12 +45,14 @@ function initMap() {
             
             let horasPos = duracao.indexOf("hour");
             let minPos = duracao.indexOf("min");
-            let horas = parseInt(duracao.slice(0, horasPos-1));
-            let minutos = parseInt(duracao.slice(minPos-3, minPos-1));
-    
-            if (horasPos != -1) {
+            let horas = duracao.slice(0, horasPos-1);
+            let minutos;
+
+            if (horasPos != -1 && horasPos != 0 && horasPos != NaN) {
+                minutos = duracao.slice(minPos-3, minPos-1);
                 duracao = horas + "h e " + minutos + "min";
             } else {
+                minutos = duracao.slice(0, minPos-1);
                 duracao = minutos + "min";
             }
             
