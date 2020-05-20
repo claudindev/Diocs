@@ -38,6 +38,7 @@ function initMap() {
 
                 document.getElementsByClassName('busca-wrapper')[0].classList.add('busca-hidden');
                 document.getElementsByClassName('resultados')[0].classList.remove('resultados-hidden');
+                aumentarPonto();
             } else {
                 alert('Não consegui identificar os endereços. Tente ser mais específico (ex. Rua Exemplo, 123, Cidade Exemplo)');
                 return false;

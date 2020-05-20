@@ -1,7 +1,7 @@
 .content {
     padding: 0 60px;
     min-height: 100vh;
-    max-height: 100vh;
+    box-sizing: border-box;
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -9,6 +9,7 @@
 #map {
     min-height: 100vh;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .resultado {
@@ -39,14 +40,19 @@
 
 .resultados {
     transform: translateY(-300px);
-    transition: 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
     opacity: 1;
+    visibility: visible;
+    box-sizing: border-box;
 }
 
 .resultados-hidden {
     transform: translateY(-300px), translateX(600px), ;
+    transition: opacity 300ms ease-in-out;
     opacity: 0;
     visibility: hidden;
+    height: 0;
+    overflow: hidden;
 }
 
 #resultado-andando {
@@ -114,4 +120,147 @@
 
 .economia-gco2 {
     color: #77B82E;
+}
+
+.sorteio {
+    height: 240px;
+    width: 530px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #FBFBFB;
+    box-shadow: -6px -6px 12px rgba(0, 0, 0, 0.1), inset 0px 6px 24px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.sorteio-wrapper {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+.sorteio-img {
+    background-image: url(../img/sorteio.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sorteio-text {
+    padding: 0 0 0 25px;
+    position: relative;
+}
+
+.sorteio h4 {
+    text-align: center;
+}
+
+.sorteio-title {
+    font-weight: bold;
+    margin: 25px 0 10px;
+}
+
+.sorteio-texto {
+    font-size: 16px;
+    color: #4B6971;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#st-progress {
+    color: #a3a3a3 !important;
+}
+
+.barra-progresso-fora {
+    width: 100%;
+    height: 14px;
+    background: #FBFBFB;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.75), inset 0px 6px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 100px;
+    box-sizing: border-box;
+    padding: 4px;
+    margin-top: -5px;
+}
+
+.barra-progresso-dentro {
+    width: 0%;
+    height: 100%;
+    background: #77B82E;
+    box-shadow: 0px 0px 12px rgba(119, 184, 46, 0.5);
+    border-radius: 100px;
+    transition: 300ms ease-in-out;
+}
+
+.regulamento-link {
+    display: block;
+    width: calc(100% - 25px);
+    color: #a3a3a3;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.regulamento-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(48, 84, 95, 0.26);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: 300ms ease-in-out;
+}
+
+.regulamento {
+    width: 680px;
+    height: 460px;
+    background: #FBFBFB;
+    box-shadow: -6px -6px 12px rgba(0, 0, 0, 0.1), inset 0px 6px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px 5px 20px 40px;
+    position: relative;
+    transform: translateY(0);
+    overflow: hidden;
+}
+
+.regulamento-title {
+    margin-top: 5px;
+}
+
+.regulamento-close {
+    top: 15px;
+    right: 20px;
+    margin: 0;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-image: url(../img/close.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.regulamento-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.regulamento-texto {
+    height: 360px;
+    overflow-y: scroll;
+}
+
+.btn-participar {
+    margin-top: 0px;
+    display: none;
 }

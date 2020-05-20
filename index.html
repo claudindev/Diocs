@@ -58,6 +58,38 @@
         </div>
     </div>
 
+    <div class="sorteio">
+        <div class="sorteio-wrapper">
+            <div class="sorteio-img"></div>
+            <div class="sorteio-text">
+                <h4 id="st-title" class="sorteio-title">Sorteio</h4>
+                <h4 id="st-txt" class="sorteio-texto">Ganhe pontos para receber o ticket do sorteio!</h4>
+                <h4 id="st-progress" class="sorteio-texto">Carregando...</h4>
+                <div class="barra-progresso-fora">
+                    <div class="barra-progresso-dentro"></div>
+                </div>
+                <button class="btn-participar" onclick="entrarSorteio()">Participar</button>
+                <button class="button-secondary btn-participar btn-deixar" onclick="sairSorteio()">Deixar Sorteio</button>
+                <a href="#" class="regulamento-link" onclick="abrirRegulamento()">Confira o Regulamento</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="regulamento-wrapper regulamento-hidden">
+        <div class="regulamento">
+            <h2 class="regulamento-title">Regulamento</h2>
+            <button class="regulamento-close" onclick="fecharRegulamento()"></button>
+            <div class="regulamento-texto">
+                <p>
+                    <b><u>Regras Gerais</u></b><br>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem nam vero voluptas autem temporibus molestias amet, aperiam explicabo eaque aliquid deserunt reiciendis dolor consequuntur enim. Iusto libero iste atque voluptatem?<br><br>
+                    <b><u>Regras Gerais</u></b><br>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem nam vero voluptas autem temporibus molestias amet, aperiam explicabo eaque aliquid deserunt reiciendis dolor consequuntur enim. Iusto libero iste atque voluptatem?<br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
 
@@ -72,15 +104,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL4vO5O4u-cPb90s1vpUsHcmNg3pzjhrk&callback=initMap"
     async defer></script>
     <script src="/js/home.js"></script>
-
-    <script>
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-
-            } else {
-                window.location.href = "/login.html";
-            }
-        });
-    </script>
+    <script src="/js/sorteio.js"></script>
 </body>
 </html>

@@ -46,3 +46,24 @@ h4{
     display: none;
     background-image: url(../img/Email.svg);
 }
+
+.cobertura {
+    position: fixed;
+    width: calc(100% - 530px);
+    height: 100vh;
+    right: 0;
+    top: 0;
+    background: rgba(48, 84, 95, 0.26);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recheio {
+    width: 640px;
+    height: 640px;
+    background-color: #fbfbfb;
+    box-shadow: -6px -6px 12px rgba(0, 0, 0, 0.1), inset 0px 6px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+}
