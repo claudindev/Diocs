@@ -117,3 +117,4 @@ function initMap() {
     directionsRenderer.setMap(map);
 }
 
+// https://www.google.com/maps/dir/?api=1&origin=origem+assim+separadinho&destination=aqui+e+o+destino&travelmode=bicycling ou walking
