@@ -22,9 +22,6 @@ function initMap() {
     localStorage.clear();
 
     calcRoute = function(selectedMode) {
-        document.getElementsByClassName('busca-wrapper')[0].classList.add('busca-hidden');
-        document.getElementsByClassName('resultados')[0].classList.remove('resultados-hidden');
-
         var start = document.getElementById('start').value;
         var end = document.getElementById('end').value;
 
@@ -35,8 +32,15 @@ function initMap() {
             language: 'pt-BR'
         };
         directionsService.route(request, function(result, status) {
+
             if (status == 'OK') {
-            directionsRenderer.setDirections(result);
+                directionsRenderer.setDirections(result);
+
+                document.getElementsByClassName('busca-wrapper')[0].classList.add('busca-hidden');
+                document.getElementsByClassName('resultados')[0].classList.remove('resultados-hidden');
+            } else {
+                alert('Não consegui identificar os endereços. Tente ser mais específico (ex. Rua Exemplo, 123, Cidade Exemplo)');
+                return false;
             }
     
             let duracao = result.routes[0].legs[0].duration.text;
