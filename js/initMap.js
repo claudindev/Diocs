@@ -77,6 +77,12 @@ function initMap() {
                 minutos = duracao.slice(0, minPos-1);
                 duracao = minutos + "min";
             }
+
+            let origin = result.routes[0].legs[0].start_address;
+            let destination = result.routes[0].legs[0].end_address;
+
+            origin = encodeURIComponent(origin);
+            destination = encodeURIComponent(destination);
             
             if (selectedMode == 'WALKING') {
                 document.getElementById('res-andando-texto').innerHTML = duracao;
@@ -86,6 +92,11 @@ function initMap() {
                 document.getElementById('res-andando-texto').classList.remove('res-hidden');
                 document.getElementById('bike-icon').classList.remove('res-icon-selected');
                 document.getElementById('andando-icon').classList.add('res-icon-selected');
+
+                let mapsURI = 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=walking';
+
+                document.getElementById('btn-rota').setAttribute('onclick', 'window.open("'+ mapsURI +'", "_blank")');
+
             } else {
                 document.getElementById('res-bike-texto').innerHTML = duracao;
                 document.getElementById('res-andando-texto').innerHTML = '';
@@ -94,6 +105,11 @@ function initMap() {
                 document.getElementById('res-andando-texto').classList.add('res-hidden');
                 document.getElementById('bike-icon').classList.add('res-icon-selected');
                 document.getElementById('andando-icon').classList.remove('res-icon-selected');
+
+                let mapsURI = 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=bicycling';
+
+                document.getElementById('btn-rota').setAttribute('onclick', 'window.open("'+ mapsURI +'", "_blank")');
+
             }
         });
     };
@@ -116,5 +132,3 @@ function initMap() {
 
     directionsRenderer.setMap(map);
 }
-
-// https://www.google.com/maps/dir/?api=1&origin=origem+assim+separadinho&destination=aqui+e+o+destino&travelmode=bicycling ou walking
