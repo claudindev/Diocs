@@ -79,15 +79,21 @@
     top: 45px;
     left: 45px;
     transition: 150ms ease-in-out;
+    opacity: 0.5;
 }
 
 .res-icon-selected {
     top: 25px;
     fill: #4B6971;
+    opacity: 1;
 }
 
 #andando-icon {
-    margin-left: 10px;
+    margin-left: -17px;
+}
+
+#bike-icon {
+    margin-left: -16px;
 }
 
 .busca-wrapper {
@@ -263,4 +269,8 @@
 .btn-participar {
     margin-top: 0px;
     display: none;
+}
+
+@media (max-width: 1080px) {
+    
 }
