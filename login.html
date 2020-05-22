@@ -17,7 +17,7 @@
     <script src="owlcarousel/owl.carousel.min.js"></script>
     
 </head>
-<body>
+<body onload="checarJanela()" onresize="checarJanela()">
     
     <div class="grid-wrapper">
         <div class="content">
@@ -96,6 +96,12 @@
                 autoplayTimeout: 4000
             });
         });
+        function checarJanela(){
+            let w = window.innerWidth;
+            if (w <= 1080) {
+                window.location.href = "https://claudindev.github.io/Diocs-Mobile/login.html";
+            }
+        }
     </script>
 </body>
 </html>
