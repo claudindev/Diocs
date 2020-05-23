@@ -4,11 +4,3 @@ function resetarBusca() {
     buscou = false;
     initMap();
 }
-
-function login() {
-
-}
-
-function abrirBusca(){
-    
-}
