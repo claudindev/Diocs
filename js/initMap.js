@@ -4,6 +4,8 @@ let calcRoute;
 
 let testInputs;
 
+let buscou = false;
+
 function initMap() {
     var directionsService = new google.maps.DirectionsService();
     var directionsRenderer = new google.maps.DirectionsRenderer();
@@ -38,7 +40,10 @@ function initMap() {
 
                 document.getElementsByClassName('busca-wrapper')[0].classList.add('busca-hidden');
                 document.getElementsByClassName('resultados')[0].classList.remove('resultados-hidden');
-                aumentarPonto();
+                if (buscou == false) {
+                    aumentarPonto();
+                    buscou = true;
+                }
             } else {
                 alert('Não consegui identificar os endereços. Tente ser mais específico (ex. Rua Exemplo, 123, Cidade Exemplo)');
                 return false;
