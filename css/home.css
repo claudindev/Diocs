@@ -271,6 +271,19 @@
     display: none;
 }
 
-@media (max-width: 1080px) {
-    
+.button-logout {
+    position: absolute;
+    margin: 0;
+    top: 45px;
+    width: 48px;
+    left: 420px;
+    background-image: url(../img/logout.svg);
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+
+.logo {
+    margin-left: 75px;
+    cursor: default;
 }

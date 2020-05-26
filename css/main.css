@@ -99,7 +99,7 @@ button:active {
     background-size: contain;
     background-position: center;
     margin: 30px auto;
-    cursor: pointer;
+    cursor: default;
 }
 
 .button-secondary {

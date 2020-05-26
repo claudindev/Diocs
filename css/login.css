@@ -114,7 +114,7 @@ h4{
 .owl-3 {
     height: 100%;
     width: 100%;
-    background-image: url(../img/ilustra_2.svg);
+    background-image: url(../img/ilustra_3.svg);
     background-position: center;
     background-size: 60%;
     background-repeat: no-repeat;
@@ -139,4 +139,11 @@ h4{
     opacity: 0;
     visibility: hidden;
     top: 10px;
+}
+
+@media (max-width: 1200px) {
+    .recheio {
+        width: 530px;
+        height: 640px;
+    }
 }
